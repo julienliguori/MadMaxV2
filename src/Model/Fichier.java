@@ -2,6 +2,7 @@ package Model;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,16 +20,15 @@ public class Fichier {
 	}
 	
 	public String getData(String path) {
-		char chara = 0;
+		int chara = 0;
 		String result = "";
 		try{
-			InputStream flux=new FileInputStream(path); 
-			InputStreamReader lecture=new InputStreamReader(flux);
-			BufferedReader buff=new BufferedReader(lecture);
-			result += (char)buff.read();
+			FileReader buff = new FileReader(path);
+			chara = (char)buff.read();
+			
 			while (chara != -1) {
-				chara = (char)buff.read();
-				result += chara;
+				result += (char)chara;
+				chara = buff.read();
 			}
 			buff.close();
 			return result;

@@ -77,14 +77,14 @@ public class wkf_decrypt {
 			reponse = o1.getData("Files\\Source.txt");
 			System.out.println("message : "+reponse);
 			
-			reponse = o1.crypter(reponse, "abcdefghaaaa");
+			reponse = o1.crypter(reponse, "awqpefghaaaa");
 			System.out.println("crypte : "+reponse);
 			o1.setData("Files\\Test.txt", reponse);
 			
 			reponse = o1.getData("Files\\Test.txt");
 			System.out.println("predecrypte : "+reponse);
 			
-			reponse = o1.decrypter(reponse, "suit");
+			reponse = o1.decrypter(reponse, "colier");
 			o1.setData("Files\\Resultat.txt", reponse);
 			System.out.println(reponse);
 			
